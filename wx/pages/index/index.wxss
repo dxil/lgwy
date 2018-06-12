@@ -1,0 +1,39 @@
+@import "../../dist/index.wxss";
+/**index.wxss**/
+.topbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.search {
+  margin-top: 25rpx;
+  display: flex;
+  align-items: space-between;
+} 
+.search-bar {
+  margin-top: 20rpx;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.list {
+  margin-top: 20px;
+  margin-right: 60rpx;
+}
+.add-list {
+  float: right;
+  margin-right: 40rpx;
+}
+.menu {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}

@@ -1,0 +1,2 @@
+<!--pages/label.wxml-->
+<text>{{labelId}}</text>

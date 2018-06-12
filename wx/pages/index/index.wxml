@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="topbar">
+    <view class="userinfo">
+        <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+        <block wx:else>
+          <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+          <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+        </block>
+    </view>
+    <view>
+    <view class="search">
+      <zan-field
+      placeholder="搜索"
+      >
+      </zan-field>
+      <zan-icon type="search" size="20" class="search-bar"></zan-icon>
+    </view>
+    </view>
+  </view>
+  <view class="list">
+    <zan-cell-group>
+      <view wx:for="{{list}}" wx:key="{{index}}">
+        <zan-cell title="{{item.label}}" label="{{item.newArticle.name}}" data-id="{{item.labelId}}" bindtap="toLabel" is-link></zan-cell>
+      </view>
+    </zan-cell-group>
+  </view>
+  <view class='menu'>
+    <i-tab-bar current="homepage" bindchange="handleChange">
+    <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+    <i-tab-bar-item key="group" icon="group" current-icon="group_fill" title="Friends"></i-tab-bar-item>
+    <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" count="3" title="Notice"></i-tab-bar-item>
+    <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" dot title="My"></i-tab-bar-item>
+</i-tab-bar>
+  </view>
+</view>
