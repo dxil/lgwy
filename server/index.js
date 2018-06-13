@@ -10,10 +10,10 @@ const bodyParser = require('koa-bodyparser')
 const cors = require('@koa/cors')
 const mongoose = require('mongoose')
 const router = require('./router/routes')
-const config = require('./config/config').dev
+const config = require('./libs/config').get('server')
 // const DB = require('../db')
 // const log4js = require('../../libs/log')
-const logger = require('./logger')
+const serverLog = require('./logger')
 
 const server = new Koa()
 
@@ -28,10 +28,10 @@ server.use(json()).use(cors())
 server.use(router.routes()).use(router.allowedMethods())
 
 server.listen(port, () => {
-  logger.info(`koa-server listenning at port: ${port}`)
+  serverLog.info(`koa-server listenning at port: ${port}`)
 })
 
 mongoose.Promise = global.Promise
 mongoose.connect(config.mongodb.url, () => {
-  logger.info(`mongodb listenning at url: ${config.mongodb.url}`)
+  serverLog.info(`mongodb listenning at url: ${config.mongodb.url}`)
 })
