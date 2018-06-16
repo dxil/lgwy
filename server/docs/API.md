@@ -52,7 +52,7 @@
 
 | 功能描述 | 获取所有病例类型以及该类型下最新的病例                      |
 | ---- | ---------------------------------------- |
-| Uri  | /labels?showcase=true&case-num=1  （不加showcase，默认不结合最新的num条病例） |
+| Uri  | /label?showcase=true&case-num=1  （不加showcase，默认不结合最新的num条病例） |
 | 请求方式 | GET                                      |
 
 返回的结果如下：
