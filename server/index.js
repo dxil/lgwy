@@ -10,7 +10,7 @@ const bodyParser = require('koa-bodyparser')
 const cors = require('@koa/cors')
 const async = require('async')
 const mongoose = require('mongoose')
-const router = require('./router/routes')
+const router = require('./libs/routes')
 const config = require('./libs/config').get('server')
 const log4js = require('./libs/log')
 // const DB = require('../db')
@@ -52,4 +52,4 @@ module.exports = {
     })
   }
 }
-// module.exports.start()
+module.exports.start()
