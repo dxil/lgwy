@@ -9,6 +9,9 @@ const UserSchema = new Schema(Utils.extend({
     type: String,
     require: true
   },
+  sex: {
+    type: Number // 0代表男 1代表女
+  },
   nickName: {
     type: String,
     require: true

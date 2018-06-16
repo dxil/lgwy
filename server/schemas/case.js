@@ -14,7 +14,7 @@ const CaseSchema = new Schema(Utils.extend({
     type: ObjectId,
     require: true
   },
-  label: {
+  type: {
     type: String,
     require: true
   },
@@ -28,7 +28,7 @@ const CaseSchema = new Schema(Utils.extend({
     type: Number
   },
   patientSex: {
-    type: String
+    type: Number // 0代表男 1代表女
   },
   diagnosis: { // 诊断
     type: String
