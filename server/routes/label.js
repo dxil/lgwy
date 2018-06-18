@@ -1,11 +1,7 @@
 const router = require('koa-router')()
-// const Movie = require('../controllers/movie')
+const Label = require('../controller/label')
 
 // 类型
-router.get('/:id', (ctx, next) => {
-  console.log(ctx.params)
-  ctx._result = ctx.params
-  return next()
-})
+router.get('/:id', Label.add)
 
 module.exports = router.routes()
