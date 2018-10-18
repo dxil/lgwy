@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Utils = require('../../utils/utils')
+const Utils = require('../utils/utils')
 const basicSchema = require('./basicSchema')
 
 const Schema = mongoose.Schema
@@ -18,7 +18,10 @@ const UserSchema = new Schema(Utils.extend({
   },
   avatar: {
     type: String
+  },
+  phoneNumber: {
+    type: String
   }
-}), basicSchema)
+}, basicSchema))
 
 module.exports = UserSchema

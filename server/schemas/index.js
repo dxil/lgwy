@@ -7,7 +7,7 @@ let Schema = {
 
 for (let sch in Schema) {
   if (Schema.hasOwnProperty(sch)) {
-    attachSaveHooks(Schema.sch)
+    attachSaveHooks(Schema[sch])
   }
 }
 function attachSaveHooks (schema) {
@@ -17,7 +17,6 @@ function attachSaveHooks (schema) {
     } else {
       this.updateAt = Date.now()
     }
-
     next()
   })
 }

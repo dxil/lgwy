@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Utils = require('../../utils/utils')
+const Utils = require('../utils/utils')
 const basicSchema = require('./basicSchema')
 
 const Schema = mongoose.Schema
@@ -42,6 +42,6 @@ const CaseSchema = new Schema(Utils.extend({
   prescription: { // 处方
     type: String
   }
-}), basicSchema)
+}, basicSchema))
 
 module.exports = CaseSchema

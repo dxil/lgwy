@@ -1,11 +1,11 @@
 const router = require('koa-router')()
 const Label = require('../controller/label')
 
-// 获取类型
+// 获取类型 query labelid
 router.get('/', Label.get)
 
 // 新增类型
-router.post('/:id', Label.add)
+router.post('/', Label.add)
 
 // 修改类型
 router.put('/:id', Label.update)
