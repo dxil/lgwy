@@ -7,7 +7,7 @@ exports.add = async (ctx, next) => {
     UserModel
 
   body = ctx.request.body
-  if (!body.openid || !body.nickName) {
+  if (!body.openId || !body.nickName) {
     ctx._error = {
       code: -1000,
       msg: 'params error!!'
@@ -15,7 +15,7 @@ exports.add = async (ctx, next) => {
     return next()
   }
 
-  _userDoc = await User.findOne({openid: body.openid})
+  _userDoc = await User.findOne({openId: body.openId})
 
   if (_userDoc) {
     ctx._error = {
@@ -26,7 +26,7 @@ exports.add = async (ctx, next) => {
   }
 
   UserModel = new User({
-    openid: body.openid,
+    openId: body.openId,
     nickName: body.nickName
   })
 
@@ -34,7 +34,7 @@ exports.add = async (ctx, next) => {
 
   if (userDoc) {
     ctx._result = {
-      openid: userDoc.openid,
+      openId: userDoc.openId,
       nickName: userDoc.nickName,
       _id: userDoc._id
     }
@@ -45,7 +45,7 @@ exports.add = async (ctx, next) => {
 exports.get = (ctx, next) => {
   let params = ctx.params
 
-  if (!params.labelid) {
+  if (!params.userId) {
     ctx._error = {
       code: -1000,
       msg: 'params error!!'

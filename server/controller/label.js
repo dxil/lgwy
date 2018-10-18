@@ -37,7 +37,7 @@ exports.get = async (ctx, next) => {
   let labelDoc
 
   // 传入用户的手机号/openid查找
-  if (!params.openid) {
+  if (!params.openId) {
     ctx._error = {
       code: -1000,
       msg: 'params error!!'
@@ -45,7 +45,7 @@ exports.get = async (ctx, next) => {
     return next()
   }
   labelDoc = await Label.find({
-    openid: params.openid
+    openId: params.openId
   })
 
   ctx._result = {

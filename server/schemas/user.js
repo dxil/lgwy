@@ -5,7 +5,7 @@ const basicSchema = require('./basicSchema')
 const Schema = mongoose.Schema
 
 const UserSchema = new Schema(Utils.extend({
-  openid: {
+  openId: {
     type: String,
     require: true
   },

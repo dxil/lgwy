@@ -13,6 +13,10 @@ const LabelSchema = new Schema(Utils.extend({
   userId: {
     type: ObjectId,
     require: true
+  },
+  openId: {
+    type: String,
+    require: true
   }
 }, basicSchema))
 
