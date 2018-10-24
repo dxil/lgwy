@@ -13,7 +13,7 @@ router.use(function (ctx, next) {
 // router.use('/', require('../routes/index')) // 暂无首页
 router.use('/label', require('../routes/label'))
 router.use('/user', require('../routes/user'))
-// router.use('/case', require('../routes/case'))
+router.use('/case', require('../routes/case'))
 // router.use('/admin', require('../routes/admin')) // todo 后台统计
 
 router.use(function (ctx, next) {
